@@ -1,0 +1,22 @@
+<html>
+<head>
+
+<p id="demo"></p>
+<script>
+
+var data = '{{dataArray}}';
+var text, length, i;
+length = '{{dataArray}}'.length;
+text = "<ul>";
+for (i = 0; i < length; i++) {
+    text += "<li>" + '{{dataArray[0].temp}}' + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+
+</script>
+<body>
+<p>Hello World</p>
+<button onclick="alert('temp: {{ dataArray[0].temp }} ' + someJavaScriptVar)" />
+</body>
+</html>
