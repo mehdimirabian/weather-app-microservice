@@ -2,37 +2,15 @@
 <head>
 <h1> Weather Forecast Powered by Open Weather Map API<h1>
 <p id="demo"></p>
-<script>
-var data = '{{dataArray}}';
-var text, length, i;
-length = '{{dataArray}}'.length;
-text = "<ul>";
 
-text += "<li>" + 'Temp:&nbsp {{dataArray[0].temp}}, &nbsp Weather: &nbsp \
-{{dataArray[0].weather}}, &nbsp Humidity: &nbsp {{dataArray[0].humidity}}, \
-&nbsp Date: &nbsp {{dataArray[0].date}} ' + "</li>";
+<ul>
+{% for data in dataArray %}
+    <li>Temp:&nbsp {{ data.temp }}, &nbsp Weather: &nbsp {{ data. weather }},
+    &nbsp Humidity: &nbsp {{ data.humidity }}, &nbsp Date: &nbsp {{data.date}}
+    </li>
+{% endfor %}
+</ul>
 
-text += "<li>" + 'Temp:&nbsp {{dataArray[5].temp}}, &nbsp Weather: &nbsp \
-{{dataArray[5].weather}}, &nbsp Humidity: &nbsp {{dataArray[5].humidity}}, \
-&nbsp Date: &nbsp {{dataArray[5].date}} ' + "</li>";
-
-text += "<li>" + 'Temp:&nbsp {{dataArray[9].temp}}, &nbsp Weather: &nbsp \
-{{dataArray[9].weather}}, &nbsp Humidity: &nbsp {{dataArray[9].humidity}}, \
-&nbsp Date: &nbsp {{dataArray[9].date}} ' + "</li>";
-
-text += "<li>" + 'Temp:&nbsp {{dataArray[12].temp}}, &nbsp Weather: &nbsp \
-{{dataArray[12].weather}}, &nbsp Humidity: &nbsp {{dataArray[12].humidity}}, \
-&nbsp Date: &nbsp {{dataArray[12].date}} ' + "</li>";
-
-text += "<li>" + 'Temp:&nbsp {{dataArray[15].temp}}, &nbsp Weather: &nbsp \
-{{dataArray[15].weather}}, &nbsp Humidity: &nbsp {{dataArray[15].humidity}}, \
-&nbsp Date: &nbsp {{dataArray[15].date}} ' + "</li>";
-
-
-text += "</ul>";
-document.getElementById("demo").innerHTML = text;
-
-</script>
 <body>
 </body>
 </html>
