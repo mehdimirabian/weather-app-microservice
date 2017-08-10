@@ -18,13 +18,9 @@ def getWeather(data):
     for l in jlist:
         weatherObj = WeatherStructure()
         weatherObj.temp = l['main']['temp']
-        print(weatherObj.temp)
         weatherObj.weather = l['weather'][0]['main']
-        print(weatherObj.weather)
         weatherObj.humidity = l['main']['humidity']
-        print(weatherObj.humidity)
         weatherObj.date = l['dt_txt']
-        print(weatherObj.date)
         array.append(weatherObj)
     return array
 
